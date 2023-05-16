@@ -28,3 +28,9 @@ class Title(BaseModel):
     body_kz = models.TextField()
     body_ar = models.TextField()
     body_turk = models.TextField()
+
+
+class IOSFiles(BaseModel):
+    title = models.CharField(max_length=50)
+    files = models.FileField(upload_to='ios_files/%Y/%m/%d')
+

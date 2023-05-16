@@ -16,5 +16,7 @@ urlpatterns = [
     path('auth/', include('rest_framework.urls')),
     re_path(r"^title/$", TitleView.as_view(), name='title view'),
     path("title/<pk>", TitleUpdateView.as_view(), name='update title view'),
+    re_path(r"^iosfiles/$", IOSFileView.as_view(), name='iosfile view'),
+    path("iosfiles/<pk>", IOSFileUpdateView.as_view(), name='update iosfiles view'),
 
 ]

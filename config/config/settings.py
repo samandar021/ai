@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '35.172.179.129', 'localhost']
 
+DATA_UPLOAD_MAX_MEMORY_SIZE = 1200000000
+FILE_UPLOAD_MAX_MEMORY_SIZE = 1200000000
+
 # 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
 # Application definition
 

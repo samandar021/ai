@@ -70,7 +70,8 @@ class IOSFileView(ListCreateAPIView):
     serializer_class = IOSFilesSerializer
     parser_classes = (MultiPartParser, FormParser, JSONParser)
     filter_backends = (filters.OrderingFilter, DjangoFilterBackend)
-
+    
+    filterset_fields = ['title']
     ordering = ['pk']
 
     def get_queryset(self):

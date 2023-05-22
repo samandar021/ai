@@ -83,6 +83,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+TIMEOUT = 600  # 10 minutes
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

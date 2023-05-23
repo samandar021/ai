@@ -21,13 +21,12 @@ class Title(BaseModel):
     image = models.ImageField(upload_to='photos/%Y/%m/%d')
     date = models.DateTimeField()
     readCount = models.IntegerField()
-    body = models.TextField()
     body_uz = models.TextField()
     body_ru = models.TextField()
     body_eng = models.TextField()
-    body_kz = models.TextField()
-    body_ar = models.TextField()
-    body_turk = models.TextField()
+    body_kazak = models.TextField()
+    body_krgyz = models.TextField()
+    body_tajik = models.TextField()
 
 
 class IOSFiles(BaseModel):

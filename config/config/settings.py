@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -27,11 +26,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '3.80.218.251', 'localhost']
 
-DATA_UPLOAD_MAX_MEMORY_SIZE = 12000000000
-FILE_UPLOAD_MAX_MEMORY_SIZE = 12000000000
+DATA_UPLOAD_MAX_MEMORY_SIZE = 1200000000
+FILE_UPLOAD_MAX_MEMORY_SIZE = 1200000000
 
 # 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
-# Application definition
+# Application definition   jj
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -83,8 +82,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-TIMEOUT = 600  # 10 minutes
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -134,7 +131,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -146,19 +142,45 @@ USE_I18N = True
 
 USE_TZ = True
 
+AWS_ACCESS_KEY_ID = 'AKIA2UE6OQLCXPM764AR'
+
+AWS_SECRET_ACCESS_KEY = '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'
+
+AWS_STORAGE_BUCKET_NAME = 'alhuda'
+
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+AWS_DEFAULT_ACL = 'public-read'
+
+AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+
+AWS_LOCATION = 'static'
+
+AWS_QUERYSTRING_AUTH = False
+
+AWS_HEADERS = {'Access-Control-Allow-Origin': '*'}
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+STATICFILES_DIRS = 'storages.backends.s3boto3.S3StaticStorage'
+
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+# STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [
-    # Tell Django where to look for React's static files (css, js)
-    os.path.join(BASE_DIR, "static/static"),
-]
+# STATICFILES_DIRS = [
+#     # Tell Django where to look for React's static files (css, js)
+#     os.path.join(BASE_DIR, "static/static"),
+# ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/' # 'http://myhost:port/media/'
+# MEDIA_URL = '/media/'  # 'http://myhost:port/media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 

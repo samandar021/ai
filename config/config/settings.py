@@ -162,7 +162,7 @@ AWS_HEADERS = {'Access-Control-Allow-Origin': '*'}
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-STATICFILES_DIRS = 'storages.backends.s3boto3.S3StaticStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
 
@@ -174,10 +174,10 @@ MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
 # STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATICFILES_DIRS = [
-#     # Tell Django where to look for React's static files (css, js)
-#     os.path.join(BASE_DIR, "static/static"),
-# ]
+STATICFILES_DIRS = [
+    # Tell Django where to look for React's static files (css, js)
+    os.path.join(BASE_DIR, "static/static"),
+]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # MEDIA_URL = '/media/'  # 'http://myhost:port/media/'

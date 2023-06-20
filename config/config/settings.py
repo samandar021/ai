@@ -24,14 +24,14 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get("DEBUG")))
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(",")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 # ['127.0.0.1', '3.80.218.251', '165.22.74.158', 'localhost']
 
 DATA_UPLOAD_MAX_MEMORY_SIZE = 1200000000
 FILE_UPLOAD_MAX_MEMORY_SIZE = 1200000000
 
 # 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
-# Application definition   jj
+# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',

@@ -92,7 +92,7 @@ class IOSFileUpdateView(RetrieveUpdateDestroyAPIView):
     serializer_class = IOSFilesSerializer
 
     def get_queryset(self):
-        return IO.objects.all()
+        return IOSFiles.objects.all()
 
     def get(self, request, pk):
         instance = get_object_or_404(Title, id=pk)

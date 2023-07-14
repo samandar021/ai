@@ -208,3 +208,16 @@ AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
+
+    
+CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3011",
+#     "http://127.0.0.1:3011",
+#     "http://localhost:3000",
+#     "http://127.0.0.1:3000",
+# ]
+CSRF_TRUSTED_ORIGINS = [
+    "https://alhuda.spectre-energy.uz",
+    "http://localhost",
+]

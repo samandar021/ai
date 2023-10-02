@@ -8,6 +8,8 @@ ENV DOCKER_BUILDKIT=1
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+    sqlite3 \
+    libsqlite3-dev \
     build-essential \
     binutils
 

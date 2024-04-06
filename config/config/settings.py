@@ -199,15 +199,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# --------------------------AWS CONFIG-----------------
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-AWS_DEFAULT_REGION = os.environ.get('AWS_DEFAULT_REGION')
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
+# # --------------------------AWS CONFIG-----------------
+# AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+# AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+# AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+# AWS_DEFAULT_REGION = os.environ.get('AWS_DEFAULT_REGION')
+# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
 
     
 CORS_ORIGIN_ALLOW_ALL = True
@@ -217,7 +217,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 #     "http://localhost:3000",
 #     "http://127.0.0.1:3000",
 # ]
-CSRF_TRUSTED_ORIGINS = [
-    "https://alhuda.spectre-energy.uz",
-    "http://localhost",
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     "https://alhuda.spectre-energy.uz",
+#     "http://localhost",
+# ]

@@ -19,19 +19,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fwbhbwvhhwv'
+SECRET_KEY = 'django-insecure-$&8cxi#ykn=hq31z5d7049tywtdr=3mury+d_cw7ab6uwxsnah'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['18.159.103.165', 'localhost', '127.0.0.1']
-# ['127.0.0.1', '3.80.218.251', '165.22.74.158', 'localhost']
 
 DATA_UPLOAD_MAX_MEMORY_SIZE = 1200000000
 FILE_UPLOAD_MAX_MEMORY_SIZE = 1200000000
 
 # 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
-# Application definition
+# Application definition   jj
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -144,13 +143,13 @@ USE_I18N = True
 USE_TZ = True
 
 
-# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-us'
 
-# TIME_ZONE = 'UTC'
+TIME_ZONE = 'UTC'
 
-# USE_I18N = True
+USE_I18N = True
 
-# USE_TZ = True
+USE_TZ = True
 
 # AWS_ACCESS_KEY_ID = 'AKIA2UE6OQLCXPM764AR'
 
@@ -158,9 +157,9 @@ USE_TZ = True
 
 # AWS_STORAGE_BUCKET_NAME = 'alhuda'
 
-# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+# # AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.fra1.digitaloceanspaces.com'
+# AWS_S3_CUSTOM_DOMAIN = f'alhuda.fra1.digitaloceanspaces.com'
 
 # AWS_DEFAULT_ACL = 'public-read'
 
@@ -173,8 +172,8 @@ USE_TZ = True
 # AWS_HEADERS = {'Access-Control-Allow-Origin': '*'}
 
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-#
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+# #
+# # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
 # STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
 
@@ -184,40 +183,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
+# STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATICFILES_DIRS = [
-#     # Tell Django where to look for React's static files (css, js)
-#     os.path.join(BASE_DIR, "static/static"),
-# ]
+STATICFILES_DIRS = [
+    # Tell Django where to look for React's static files (css, js)
+    os.path.join(BASE_DIR, "static/static"),
+]
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # MEDIA_URL = '/media/'  # 'http://myhost:port/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-# # --------------------------AWS CONFIG-----------------
-# AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-# AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-# AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-# AWS_DEFAULT_REGION = os.environ.get('AWS_DEFAULT_REGION')
-# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL = None
-
-    
-CORS_ORIGIN_ALLOW_ALL = True
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3011",
-#     "http://127.0.0.1:3011",
-#     "http://localhost:3000",
-#     "http://127.0.0.1:3000",
-# ]
-# CSRF_TRUSTED_ORIGINS = [
-#     "https://alhuda.spectre-energy.uz",
-#     "http://localhost",
-# ]

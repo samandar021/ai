@@ -145,6 +145,10 @@ USE_I18N = True
 
 USE_TZ = True
 
+FILE_UPLOAD_HANDLERS = [
+    'django.core.files.uploadhandler.TemporaryFileUploadHandler',
+]
+
 
 # LANGUAGE_CODE = 'en-us'
 

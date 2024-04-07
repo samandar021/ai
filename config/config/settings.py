@@ -27,8 +27,10 @@ DEBUG = True
 ALLOWED_HOSTS = ['18.159.103.165', 'localhost', '127.0.0.1']
 # ['127.0.0.1', '3.80.218.251', '165.22.74.158', 'localhost']
 
-DATA_UPLOAD_MAX_MEMORY_SIZE = 1200000000
-FILE_UPLOAD_MAX_MEMORY_SIZE = 1200000000
+DATA_UPLOAD_MAX_MEMORY_SIZE = 5242880000  # 5 GB in bytes
+
+# Maximum size in bytes that a file upload can be before it gets streamed to the file system
+FILE_UPLOAD_MAX_MEMORY_SIZE = 5242880000  # 5 GB in bytes
 
 # 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
 # Application definition

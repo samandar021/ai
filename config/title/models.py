@@ -20,13 +20,12 @@ class Title(BaseModel):
     title = models.CharField(max_length=50)
     image = models.ImageField(upload_to='photos/%Y/%m/%d')
     date = models.DateTimeField()
-    readCount = models.IntegerField()
-    body_uz = models.TextField()
-    body_ru = models.TextField()
-    body_eng = models.TextField()
-    body_kazak = models.TextField()
-    body_krgyz = models.TextField()
-    body_tajik = models.TextField()
+    readCount = models.IntegerField(blank=True)
+    body= models.TextField()
+
+    def __str__(self):
+        return self.title
+
 
 
 class IOSFiles(BaseModel):

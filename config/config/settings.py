@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_swagger',
+    'modeltranslation',
 
     # local apps
     'title',
@@ -56,6 +57,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -136,6 +138,22 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
+
+
+def gettext(s):
+    return s  # noqa
+
+
+LANGUAGES = (
+    ("en", gettext("English")),
+    ("ru", gettext("Russian")),
+    ("uz", gettext("Uzbek")),
+    ("kk", gettext("Kazak")),
+    ("kz", gettext("Kyrgz")),
+    ("tj", gettext("Tajik")),
+)
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = "uz"
 
 LANGUAGE_CODE = 'en-us'
 

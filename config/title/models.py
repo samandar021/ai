@@ -20,7 +20,7 @@ class Title(BaseModel):
     title = models.CharField(max_length=50)
     image = models.ImageField(upload_to='photos/%Y/%m/%d')
     date = models.DateTimeField()
-    readCount = models.IntegerField(blank=True)
+    readCount = models.IntegerField(blank=True, null=True)
     body= models.TextField()
 
     def __str__(self):

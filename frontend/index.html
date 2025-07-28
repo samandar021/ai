@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Use Agent Backend Demo</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Computer Use Agent Backend</h1>
+            <p>Real-time AI Agent with Computer Use Capabilities</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Left Panel - Session Management -->
+            <div class="left-panel">
+                <div class="section">
+                    <h2>Task History</h2>
+                    <div class="session-list" id="sessionList">
+                        <!-- Sessions will be populated here -->
+                    </div>
+                    <button class="btn btn-primary" onclick="createNewSession()">
+                        <span>+</span> Start New Agent Task
+                    </button>
+                </div>
+            </div>
+
+            <!-- Middle Panel - VNC Viewer -->
+            <div class="middle-panel">
+                <div class="section">
+                    <h2>VNC Desktop</h2>
+                    <div class="vnc-container">
+                        <iframe 
+                            id="vncFrame" 
+                            src="http://localhost:3000" 
+                            frameborder="0"
+                            title="VNC Desktop Environment">
+                        </iframe>
+                        <div class="vnc-overlay" id="vncOverlay">
+                            <p>VNC Desktop Environment</p>
+                            <small>The agent will interact with this desktop</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - Chat Interface -->
+            <div class="right-panel">
+                <!-- Chat Messages -->
+                <div class="section chat-section">
+                    <h2>Chat Session</h2>
+                    <div class="chat-container">
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="welcome-message">
+                                <p>Welcome! Start a new session to begin interacting with the Computer Use Agent.</p>
+                                <p>Try asking: "Search the weather in Dubai" or "Search the weather in San Francisco"</p>
+                            </div>
+                        </div>
+                        <div class="chat-input-container">
+                            <div class="input-group">
+                                <input 
+                                    type="text" 
+                                    id="messageInput" 
+                                    placeholder="Type your message here..."
+                                    disabled
+                                >
+                                <button id="sendButton" onclick="sendMessage()" disabled>Send</button>
+                            </div>
+                            <div class="agent-status" id="agentStatus">
+                                <span class="status-indicator idle"></span>
+                                <span class="status-text">Ready</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- File Management -->
+                <div class="section file-section">
+                    <h2>File Management</h2>
+                    <div class="file-container">
+                        <div class="file-upload">
+                            <input type="file" id="fileInput" multiple>
+                            <button onclick="uploadFiles()">Upload Files</button>
+                        </div>
+                        <div class="file-list" id="fileList">
+                            <!-- Uploaded files will appear here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-item">
+                <span class="label">API Status:</span>
+                <span class="value" id="apiStatus">Checking...</span>
+            </div>
+            <div class="status-item">
+                <span class="label">WebSocket:</span>
+                <span class="value" id="wsStatus">Disconnected</span>
+            </div>
+            <div class="status-item">
+                <span class="label">Active Session:</span>
+                <span class="value" id="activeSession">None</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="newSessionModal">
+        <div class="modal-content">
+            <h3>Create New Session</h3>
+            <div class="form-group">
+                <label for="sessionTitle">Session Title:</label>
+                <input type="text" id="sessionTitle" placeholder="e.g., Weather Search Task">
+            </div>
+            <div class="form-group">
+                <label for="maxToolCalls">Max Tool Calls:</label>
+                <input type="number" id="maxToolCalls" value="50" min="1" max="200">
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" onclick="closeModal('newSessionModal')">Cancel</button>
+                <button class="btn btn-primary" onclick="createSession()">Create Session</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="static/js/app.js"></script>
+</body>
+</html>
